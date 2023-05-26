@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Cheat Sheet</title>
+        <link href="./resources/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>CSS SELECTORS</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4" id="subtitle">Selector Types</th>
+                </tr>
+                <tr class="subcategories">
+                    <th>Selector</th>
+                    <th>Description</th>
+                    <th colspan="2">Example Code</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <th class="test">HTML</td>
+                    <th class="test">CSS</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="blue">
+                    <td class="selector-type">Type</td>
+                    <td>Selectors that are direct html tags (ex: p, h1, div etc...)</td>
+                    <td class="code">&ltp&gt This text is blue. &lt/p&gt</td>
+                    <td class="code">p {<br>  color: blue;<br>}</td>
+                </tr>
+                <tr>
+                    <td class="selector-type">Universal</td>
+                    <td>One selector for CSS rules applying to all html</td>
+                    <td class="code">&lth1&gt This heading is in Helvetica &lt/h1&gt<br>&ltp&gt This paragraph is written in Helvetica &lt/p&gt<br>&ltspan&gt This span is also in Helvetica &lt/span&gt</td>
+                    <td class="code">* {<br>  font-family: Helvetica, sans-serif;<br>}</td>
+                </tr>
+                <tr class="blue">
+                    <td class="selector-type">Class</td>
+                    <td>CSS rules applies to element(s) with corresponding class</td>
+                    <td class="code">&lth1&gt This heading is a heading. &lt/h1&gt<br>&ltp class="special"&gt This paragraph should be in bold &lt/p&gt</td>
+                    <td class="code">.special {<br>  font-weight: bold;<br>}</td>
+                </tr>
+                <tr>
+                    <td class="selector-type">ID</td>
+                    <td>CSS rules applies to element(s) with corresponding id (use sparingly!)</td>
+                    <td class="code">&ltdiv id="red-section"&gt <br>&ltp&gt All child elements of this div should be red. &lt/p&gt<br>&lt/div&gt</td>
+                    <td class="code">#red-section {<br>  color: red;<br>}</td>
+                </tr>
+                <tr class="blue">
+                    <td class="selector-type" rowspan="5">Attributes</td>
+                    <td>CSS rules applies to specific attributes of html tags or certain qualities of tag attribute<br><br><em>example: &lta&gt elements with a title attribute</em></td>
+                    <td class="code">&lta&gt This is a link &lt/a&gt<br>&lta title="sign-in"&gt This is another link &lt/a&gt</td>
+                    <td class="code">a[title] {<br>  font-weight: bold;<br>}</td>
+                </tr>
+                <tr>
+                    <td><em>example: &lta&gt elements with an href matching "https://example.org"</em></td>
+                    <td class="code">&lta&gt This link will be normal. &lt/a&gt<br>&lta href="https://example.org"&gt This link will be pink. &lt/a&gt</td>
+                    <td class="code">a[href="https://example.org"] {<br>  background-color: pink;<br>}</td>
+                </tr>
+                <tr class="blue">
+                    <td><em>example: &lta&gt elements with an href containing "example"</em></td>
+                    <td class="code">&lta href="https://example.org/example1"&gt This link will be pink. &lt/a&gt<br>&lta href="https://example.org"&gt This link will be pink too. &lt/a&gt</td>
+                    <td class="code">a[href*="example"] {<br>  background-color: pink;<br>}</td>
+                </tr>
+                <tr>
+                    <td><em>example: &lta&gt elements with an href ending ".org"</em></td>
+                    <td class="code">&lta&gt This link will be normal. &lt/a&gt<br>&lta href="https://example.org"&gt This link will be pink. &lt/a&gt</td>
+                    <td class="code">a[href$=".org"] {<br>  background-color: pink;<br>}</td>
+                </tr>
+                <tr class="blue">
+                    <td><em>example: &lta&gt elements whose class attribute contains the word "logo"</em></td>
+                    <td class="code">&lta class="awesome-logo"&gt This link will be italic. &lt/a&gt<br>&lta class="awesome"&gt This link will not. &lt/a&gt</td>
+                    <td class="code">a[class~="logo"] {<br>  font-style: italic;<br>}</td>
+                </tr>
+                <tr>
+                    <td class="selector-type">Pseudo class</td>
+                    <td>Seclector pertaining to elements after an user interaction</td>
+                    <td class="code">&ltp&gt This text will change size when the cursor is on it. &lt/p&gt</td>
+                    <td class="code">p:hover {<br>  font-size: 30px;<br>}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4" id="subtitle">Selector Combinations</th>
+                </tr>
+                <tr class="subcategories">
+                    <th>Combination</th>
+                    <th>Description</th>
+                    <th colspan="2">Example Code</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <th class="test">HTML</td>
+                    <th class="test">CSS</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="blue">
+                    <td class="selector-type">Chaining</td>
+                    <td>Selects elements with a specific class</td>
+                    <td class="code">&ltp class="blue"&gt This text is blue. &lt/p&gt<br>&ltp&gt This text is not. &lt/p&gt</td>
+                    <td class="code">p.blue {<br>  color: blue;<br>}</td>
+                </tr>
+                <tr>
+                    <td class="selector-type">Descendant Combinator</td>
+                    <td>Selects child elements nested in a parent with a certain class/id</td>
+                    <td class="code">&ltul class="special-list"&gt <br>&ltli&gtBold List item&lt/li&gt<br>&ltli&gtBold List item&lt/li&gt<br> &lt/ul&gt</td>
+                    <td class="code">.special-list li {<br>  font-weight: bold;<br>}</td>
+                </tr>
+                <tr class="blue">
+                    <td class="selector-type">Multiple Selectors</td>
+                    <td>Combines multiples elements for one CSS rule</td>
+                    <td class="code">&ltp&gt All paragraphs are  blue. &lt/p&gt<br>&lth1&gt All headings are blue as well. &lt/h1&gt</td>
+                    <td class="code">p,<br>h1 {<br>  color: blue;<br>}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>
